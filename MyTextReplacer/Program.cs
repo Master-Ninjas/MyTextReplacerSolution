@@ -189,6 +189,51 @@ namespace MyTextReplacer
             Console.WriteLine("");
         }
 
+        static void GetCommandLineArguments(string[] args, out string oldFilePath, out string newFilePath, out string textToReplace, out string replacementText, out bool oldFilePathValid, out bool newFilePathValid, out bool requestedHelp)
+        {
+            oldFilePath = "";
+            newFilePath = "";
+            textToReplace = "";
+            replacementText = "";
+            oldFilePathValid = false;
+            newFilePathValid = false;
+            requestedHelp = false;
+
+            int i = 0;
+            while (i < args.Length)
+            {
+                if (args[i].Equals("-Help", StringComparison.OrdinalIgnoreCase))
+                {
+                    requestedHelp = true;
+                }
+
+                if (args[i].Equals("-Source", StringComparison.OrdinalIgnoreCase))
+                {
+                    oldFilePath = args[++i];
+                    oldFilePathValid = IsSourcePathValid(oldFilePath);
+                }
+                else if (args[i].Equals("-Target", StringComparison.OrdinalIgnoreCase))
+                {
+                    newFilePath = args[++i];
+                    newFilePathValid = IsTargetPathValid(newFilePath);
+                }
+                else if (args[i].Equals("-Replace", StringComparison.OrdinalIgnoreCase))
+                {
+                    textToReplace = FormatTextToReplace(args[++i]);
+                }
+                else if (args[i].Equals("-With", StringComparison.OrdinalIgnoreCase))
+                {
+                    replacementText = FormatReplacementText(args[++i]);
+                }
+                else
+                {
+                    requestedHelp = true;
+                    break;
+                }
+                i++;
+            }
+        }
+
         static void Main(string[] args)
         {
             DisplayHeader();
@@ -202,49 +247,31 @@ namespace MyTextReplacer
             //variables to check validity of source and file paths
             bool oldFilePathValid = false;
             bool newFilePathValid = false;
+            bool requestedHelp = false;
 
             //check for command line keywords
-            for (int i = 0; i < args.Length; i++)
+            GetCommandLineArguments(args, out oldFilePath, out newFilePath, out textToReplace, out replacementText, out oldFilePathValid, out newFilePathValid, out requestedHelp);
+            if (!requestedHelp)
             {
-                if (args[i].Equals("-Help", StringComparison.OrdinalIgnoreCase))
+
+                //Once source and target file paths have been validated, display arguments and start text replacement
+                if (oldFilePathValid && newFilePathValid)
                 {
-                    DisplaySyntaxHelp();
+                    DisplayArgumentsPassed(oldFilePath, newFilePath, textToReplace, replacementText);
+                    ReplaceText(oldFilePath, newFilePath, textToReplace, replacementText);
+                    Console.WriteLine("Text replaced successfully! Please check your target file for your new text.\n");
+                }
+                //Display error message if the source and/or target file path is invalid
+                else
+                {
+                    Console.WriteLine("I'm sorry, because at least one of your inputted file paths was invalid, no changes were made. Please try again.\n");
                 }
 
-                if (args[i].Equals("-Source", StringComparison.OrdinalIgnoreCase))
-                {
-                    oldFilePath = args[i + 1];
-                    oldFilePathValid = IsSourcePathValid(oldFilePath);
-                }
-                else if (args[i].Equals("-Target", StringComparison.OrdinalIgnoreCase))
-                {
-                    newFilePath = args[i + 1];
-                    newFilePathValid = IsTargetPathValid(newFilePath);
-                }
-                else if (args[i].Equals("-Replace", StringComparison.OrdinalIgnoreCase))
-                {
-                    textToReplace = FormatTextToReplace(args[i + 1]);
-                }
-                else if (args[i].Equals("-With", StringComparison.OrdinalIgnoreCase))
-                {
-                    replacementText = FormatReplacementText(args[i + 1]);
-                }
             }
-
-            //Once source and target file paths have been validated, display arguments and start text replacement
-            if (oldFilePathValid && newFilePathValid)
-            {
-                DisplayArgumentsPassed(oldFilePath, newFilePath, textToReplace, replacementText);
-                ReplaceText(oldFilePath, newFilePath, textToReplace, replacementText);
-                Console.WriteLine("Text replaced successfully! Please check your target file for your new text.\n");
-            }
-            //Display error message if the source and/or target file path is invalid
             else
             {
-                Console.WriteLine("I'm sorry, because at least one of your inputted file paths was invalid, no changes were made. Please try again.\n");
+                DisplaySyntaxHelp();
             }
-
-
 
             /*DisplayHeader();
             // Comment out the next line 

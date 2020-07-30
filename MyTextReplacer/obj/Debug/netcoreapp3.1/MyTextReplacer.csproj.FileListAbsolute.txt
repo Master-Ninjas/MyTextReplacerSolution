@@ -1,0 +1,13 @@
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\bin\Debug\netcoreapp3.1\MyTextReplacer.exe
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\bin\Debug\netcoreapp3.1\MyTextReplacer.deps.json
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\bin\Debug\netcoreapp3.1\MyTextReplacer.runtimeconfig.json
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\bin\Debug\netcoreapp3.1\MyTextReplacer.runtimeconfig.dev.json
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\bin\Debug\netcoreapp3.1\MyTextReplacer.dll
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\bin\Debug\netcoreapp3.1\MyTextReplacer.pdb
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\obj\Debug\netcoreapp3.1\MyTextReplacer.csprojAssemblyReference.cache
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\obj\Debug\netcoreapp3.1\MyTextReplacer.AssemblyInfoInputs.cache
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\obj\Debug\netcoreapp3.1\MyTextReplacer.AssemblyInfo.cs
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\obj\Debug\netcoreapp3.1\MyTextReplacer.csproj.CoreCompileInputs.cache
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\obj\Debug\netcoreapp3.1\MyTextReplacer.dll
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\obj\Debug\netcoreapp3.1\MyTextReplacer.pdb
+C:\Users\LYoung\source\repos\MyTextReplacerSolution\MyTextReplacer\obj\Debug\netcoreapp3.1\MyTextReplacer.genruntimeconfig.cache

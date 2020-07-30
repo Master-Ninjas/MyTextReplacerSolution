@@ -3,4 +3,5 @@
 ################################################################################
 
 /.vs/MyTextReplacerSolution/v16/.suo
-/MyTextReplacer/obj
+/MyTextReplacer/obj/.*
+/MyTextReplacer/bin/.*

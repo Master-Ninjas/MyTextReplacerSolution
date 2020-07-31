@@ -7,4 +7,8 @@
     <Copyright>Hewlett-Packard Inc. (C) All Rights Reserved</Copyright>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Test\" />
+  </ItemGroup>
+
 </Project>

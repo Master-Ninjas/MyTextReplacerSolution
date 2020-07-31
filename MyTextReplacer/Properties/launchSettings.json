@@ -2,7 +2,7 @@
   "profiles": {
     "MyTextReplacer": {
       "commandName": "Project",
-      "commandLineArgs": "-help"
+      "commandLineArgs": "-source \"..\\..\\..\\Test\\test.txt\" -target \"..\\..\\..\\Test\\blah.txt\" -replace \"helloWorld\" -with \"Hello World!\""
     }
   }
 }

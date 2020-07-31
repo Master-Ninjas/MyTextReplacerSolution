@@ -5,3 +5,7 @@
 /.vs/MyTextReplacerSolution/v16/.suo
 /MyTextReplacer/obj/.*
 /MyTextReplacer/bin/.*
+/.vs
+/MyTextReplacer/bin/Debug/netcoreapp3.1
+/MyTextReplacer/obj/Debug/netcoreapp3.1
+*.user

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MyTextReplacer": {
+      "commandName": "Project",
+      "commandLineArgs": "-help"
+    }
+  }
+}

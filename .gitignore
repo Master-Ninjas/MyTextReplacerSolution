@@ -9,3 +9,7 @@
 /MyTextReplacer/bin/Debug/netcoreapp3.1
 /MyTextReplacer/obj/Debug/netcoreapp3.1
 *.user
+*.json
+*.props
+*.targets
+*.cache
